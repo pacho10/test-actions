@@ -7,6 +7,7 @@ jobs:
             - name: Checkout repo
               uses: actions/checkout@v3
     lint:
+        needs: checkout
         runs-on: ubuntu-latest
         steps:          
             - name: Install dependencies
