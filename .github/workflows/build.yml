@@ -9,7 +9,9 @@ jobs:
     lint:
         needs: checkout
         runs-on: ubuntu-latest
-        steps:          
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v3          
             - name: Install dependencies
               run: npm install  
             - name: Lint
@@ -18,6 +20,8 @@ jobs:
         needs: lint
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repo
+              uses: actions/checkout@v3
             - name: Install dependencies
               run: npm install          
             - name: Test
